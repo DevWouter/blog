@@ -1,5 +1,5 @@
 ---
-title: How to reduce test duration in an angular project
+title: Reduce test duration in an Angular project
 tags:
   - Angular
   - Programming
@@ -7,21 +7,19 @@ tags:
 date: 2020-05-28 20:43:00
 ---
 
-For some time, I have been working on an Angular. Most of the code is written in a <abbr title="Test Driven Development">TDD</abbr> style. Which means there are now a lot of tests. Tests that will run every time I make a change. Because of the nature of Angular, it takes about 30 seconds to complete, which for me means that TDD is no longer as effective. So how can we reduce the 30 seconds?
+For some time, I have been working on an Angular project. Most of the code is written in a <abbr title="Test Driven Development">TDD</abbr> style. Which means there are a lot of tests. Tests that will run every time I make a change. Because of the nature of Angular, it takes about 30 seconds to complete, which for me means that TDD start losing it's effectiveness. So how can we reduce the 30 seconds delay?
 
 <!-- more -->
 
-When you execute `ng test --watch false` is executed. It will compile all the code, run the tests, provide feedback, and exit. This process from start to finish takes up around 3 minutes now. The 30 seconds I mention are only the "run test" and "provide feedback" part. So what one normally does is run `ng test`. 
+When you execute `ng test` it will compile all the code, run the tests, provide feedback, and exit. This process from start to finish takes around 3 minutes for me right now. The 30 seconds mentioned earlier is only the "run test" and "provide feedback" part. 
 
-The reason why I mention `ng test --watch false` is because I'm also interested in reducing the time it takes to compile on the build server.
+Waiting 30 seconds for the results is too long for me. I don't mind waiting a little bit but TDD only works when you get quick results, which for me means it needs to be below the 15 seconds. So how can we reduce it to 15 seconds?
 
-Waiting 30 seconds to get the results is too long for me. I don't mind waiting a little bit but TDD only works when you get quick results, which for me means I need it below the 15 seconds mark. So how can we reduce the 30 seconds?
+One way would be to use `fdescribe(...)` and `fit(...)` but then I need to do undo that every time I commit. And experience has thought me that it was too easy to forget. Resulting in the build server only running a few of the tests instead of all.
 
-One way would be to use `fdescribe(...)` and `fit(...)` but I need to do undo that every time I want to make a commit. And yes, more than once they did become part of the commit.
+Angular.io has great documentation, but the part about [Angular workspace configuration](https://angular.io/guide/workspace-config) is a bit lacking compared to the rest. For example: Explaining the pros and cons.
 
-Now the Angular.io has some of the best documentation, but the part about [Angular workspace configuration](https://angular.io/guide/workspace-config) could be a little bit better. For example: Explaining the pros and cons.
-
-One such advantage I discovered is that when you split your project, it builds everything when you use `ng serve` but when you run `ng test` it will only run the tests inside the application and not the libraries.
+One such advantage is that when you split your project, it builds everything when you use `ng serve` but when you run `ng test` it will only run the tests inside the application and not the libraries.
 
 Below you will find a step-by-step example of you could something like that up.
 
