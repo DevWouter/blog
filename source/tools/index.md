@@ -19,6 +19,7 @@ Here is a list of tools that I find useful. This list is also the one that I use
 * [NodeJs](https://nodejs.org/)
 * [Chrome](https://www.google.com/chrome/) - For testing purposes
 * [LinqPad](https://www.linqpad.net/) - Allows you to query the database using C# instead of SQL. Quite usefull if you need to comb through a complex database or need to write some example C# code. 
+* [Postman](https://www.postman.com/) - Tool for testing HTTP requests
 
 ## Administration
 * [mRemoteNG](https://mremoteng.org) - For remote desktop connections.
