@@ -23,7 +23,7 @@ Here is a list of tools that I find useful. This list is also the one that I use
 
 ## Administration
 * [mRemoteNG](https://mremoteng.org) - For remote desktop connections.
-* [WinSCP](https://winscp.net/) - Tool I use to upload/download over SSH connections
+* [Cyberduck](https://cyberduck.io/) - Tool I use to upload/download over SSH connections
 
 ## Personal
 * [Spotify](https://www.spotify.com)
