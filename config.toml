@@ -4,6 +4,8 @@ title = "ThenNext"
 author = "Wouter Lindenhof"
 theme = "contrast-hugo"
 
+[permalinks]
+  posts = "/:year/:month/:title/"
 
 [params]
   minimal = false
