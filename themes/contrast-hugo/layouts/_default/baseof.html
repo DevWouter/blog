@@ -2,6 +2,7 @@
 <html lang="{{ .Site.LanguageCode | default "en" }}">
 <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src https:">
 {{ hugo.Generator }}
 {{- if or .Description .Site.Params.description }}
 <meta name="description" content="{{ .Description | default .Site.Params.description }}">
