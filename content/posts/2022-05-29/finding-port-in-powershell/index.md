@@ -6,6 +6,8 @@ draft: false
 
 At one point I was wondering which process was running on port `3000` because I wanted to debug another application (which also uses) that port. So I ran the following command.
 
+<!--more-->
+
 ```ps
 Get-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess
 ```
